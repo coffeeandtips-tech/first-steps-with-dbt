@@ -1,0 +1,94 @@
+version: 2
+
+sources:
+  - name: wetube
+    tables:
+      - name: account
+      - name: city
+      - name: state
+      - name: channel
+      - name: channel_subs
+      - name: video
+      - name: video_like
+      - name: user_address
+
+models:
+  - name: number_of_subs_by_channel
+    description: "Number of subscribers by channel"
+    columns:
+      - name: id_channel
+        description: "Channel's ID"
+        tests:
+          - not_null
+      - name: channel
+        description: "Channel's Name"
+        tests:
+          - not_null
+      - name: num_of_subs
+        description: "Number of Subs"
+        tests:
+          - not_null
+
+  - name: account_information
+    description: "Model containing account information and it's channels"
+    columns:
+      - name: id_account
+        description: "Account ID"
+        tests:
+          - not_null
+      - name: first_name
+        description: "First name of user's account"
+        tests:
+          - not_null
+      - name: last_name
+        description: "Last name of user's account"
+        tests:
+          - not_null
+      - name: email
+        description: "Account's email"
+        tests:
+          - not_null
+      - name: city_name
+        description: "city's name"
+        tests:
+          - not_null
+      - name: state_name
+        description: "state's name"
+        tests:
+          - not_null
+      - name: id_channel
+        description: "channel's Id"
+        tests:
+          - not_null
+      - name: channel_name
+        description: "channel's name"
+        tests:
+          - not_null
+      - name: channel_creation
+        description: "Date of creation name"
+        tests:
+          - not_null
+
+  - name: total_likes_by_video
+    description: "Model containing total of likes by video"
+    columns:
+      - name: id_channel
+        description: "Channel's Id"
+        tests:
+          - not_null
+      - name: channel
+        description: "Channel's name"
+        tests:
+          - not_null
+      - name: id_video
+        description: "Video's Id"
+        tests:
+          - not_null
+      - name: title
+        description: "Video's Title"
+        tests:
+          - not_null
+      - name: total_likes
+        description: "Total of likes"
+        tests:
+          - not_null
