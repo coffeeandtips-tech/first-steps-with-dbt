@@ -12,6 +12,7 @@
 
 Details here [coffeeandtips/first-steps-with-dbt][blog-dbt]
 
+[blog-dbt]: <https://www.coffeeandtips.com/post/first-steps-with-dbt>
 
 
 
